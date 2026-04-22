@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webnestic Tech Up - App Workshop</title>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#0b1320,#020617);
+  color:white;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:15px;
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* NEWS */
+.news{
+  background:#ff9800;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.news span{
+  display:inline-block;
+  padding:10px;
+  animation:scroll 12s linear infinite;
+  font-weight:bold;
+}
+@keyframes scroll{
+  0%{transform:translateX(100%)}
+  100%{transform:translateX(-100%)}
+}
+
+/* ABOUT */
+.about{
+  padding:20px;
+  text-align:center;
+}
+.about h2{color:#ff9800;}
+.about p{color:#ccc;}
+
+/* FORM */
+.form-box{
+  max-width:420px;
+  margin:20px auto;
+  padding:20px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
+}
+
+.input-box{
+  margin:12px 0;
+}
+.input-box input,
+.input-box select{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #555;
+  background:transparent;
+  color:white;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  border:none;
+  color:white;
+  border-radius:8px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.popup-box{
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* WhatsApp */
+.wa-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>WEBNESTIC TECH UP</header>
+
+<div class="news">
+<span>🔥 2 घंटे में App बनाना सीखें | ₹100 Only | Sunday 1PM Live 🚀</span>
+</div>
+
+<section class="about">
+<h2>📱 2 Hour App Workshop</h2>
+<p>AI का use करके Mobile App बनाना सीखें — सिर्फ 2 घंटे में</p>
+<p>✔ Beginner Friendly ✔ Live Practical ✔ No Coding Needed</p>
+</section>
+
+<div class="form-box">
+<h2>🚀 Join Workshop</h2>
+
+<form id="form">
+
+<div class="input-box">
+<input type="text" id="name" placeholder="Student Name" required>
+</div>
+
+<div class="input-box">
+<input type="tel" id="phone" placeholder="Mobile Number" required>
+</div>
+
+<div class="input-box">
+<input type="email" id="email" placeholder="Email" required>
+</div>
+
+<button class="btn">Pay ₹100 & Join</button>
+
+</form>
+
+<p style="text-align:center;color:#aaa;font-size:14px;">
+✔ Recording मिलेगा ✔ WhatsApp Support
+</p>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <h2>📢 Workshop Info</h2>
+    <p>Sunday | 1 PM</p>
+    <p>Duration: 2 Hours</p>
+    <p>Fee: ₹100</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919473549700" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="wa-btn">
+</a>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+
+  var options = {
+    key:"rzp_live_z5X8cFJEBrqXF9",
+    amount:10000,
+    currency:"INR",
+    name:"Webnestic Tech Up",
+
+    handler: function(){
+      alert("Payment Successful ✅");
+
+      let msg = `Hello Sir, I am ${name}. Payment done. I want to join App Workshop.`;
+
+      window.location.href = "https://wa.me/919473549700?text=" + encodeURIComponent(msg);
+    }
+  };
+
+  new Razorpay(options).open();
+});
+
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+  </html>
