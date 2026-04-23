@@ -3,42 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electronic कांटा | Premium Service</title>
+<title>Electronic कांटा | Sale & Service</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0b1320;color:#fff}
+body{background:#f4f7fb}
 
-/* TOP NEWS */
+/* NEWS BAR */
 .news{
 background:#ff3b3b;
-padding:6px;
-text-align:center;
+color:#fff;
+padding:5px 0;
 font-size:13px;
-animation:blink 1.5s infinite alternate;
+overflow:hidden;
+white-space:nowrap;
 }
-@keyframes blink{from{opacity:1}to{opacity:.6}}
+.news span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 15s linear infinite;
+}
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
 
 /* HEADER */
 header{
-background:linear-gradient(90deg,#0a7cff,#00c6ff);
-padding:15px;
+background:linear-gradient(90deg,#004aad,#00c6ff);
+color:#fff;
+padding:10px;
 text-align:center;
 }
-.logo{
-font-size:22px;
-font-weight:600;
-}
-.logo span{color:yellow}
+header h1{font-size:20px}
+header p{font-size:12px}
 
 /* NAV */
 nav{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 background:#111;
 position:sticky;
 top:0;
@@ -46,47 +53,36 @@ z-index:1000;
 }
 nav a{
 color:#fff;
-padding:12px;
+padding:10px 12px;
+font-size:14px;
 text-decoration:none;
-transition:.3s;
 }
-nav a:hover{
-background:#0a7cff;
-border-radius:5px;
-}
+nav a:hover{background:#0a7cff}
 
 /* HERO */
 .hero{
-height:85vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
-url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc') center/cover;
-animation:zoom 10s infinite alternate;
+padding:50px 15px;
+background:#eaf4ff;
 }
-@keyframes zoom{from{background-size:100%}to{background-size:110%}}
+.hero h2{font-size:24px;margin-bottom:5px}
 
-.hero h1{font-size:35px}
-.hero p{margin:10px 0}
-
+/* BUTTON */
 .btn{
 background:linear-gradient(45deg,#0a7cff,#00c6ff);
-padding:12px 25px;
+color:#fff;
+padding:12px 20px;
 border-radius:30px;
 text-decoration:none;
-color:#fff;
-margin-top:10px;
 display:inline-block;
-transition:.3s;
+margin-top:10px;
+border:none;
+cursor:pointer;
 }
-.btn:hover{transform:scale(1.1)}
 
-/* SECTION */
+/* CONTAINER */
 .container{
-padding:40px 15px;
+padding:35px 15px;
 max-width:1100px;
 margin:auto;
 }
@@ -94,109 +90,106 @@ margin:auto;
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
 
 /* CARD */
 .card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border-radius:15px;
+background:#fff;
 padding:15px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+transition:.3s;
 text-align:center;
-transition:.4s;
-border:1px solid rgba(255,255,255,0.1);
 }
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
+.card:hover{transform:translateY(-5px)}
 
+/* PRODUCT IMAGE */
 .card img{
 width:100%;
 height:150px;
 object-fit:cover;
-border-radius:10px;
-margin-bottom:10px;
-}
-
-.rating{color:#f1c40f}
-
-/* FORM */
-input,textarea{
-width:100%;
-padding:12px;
-margin:8px 0;
-border:none;
 border-radius:8px;
+margin-bottom:8px;
 }
 
-/* CONTACT BOX */
-.contact-box{
-background:linear-gradient(45deg,#0a7cff,#00c6ff);
-padding:20px;
-border-radius:15px;
-text-align:center;
+.card h3{
+font-size:15px;
+margin-bottom:5px;
 }
 
-/* FOOTER */
-footer{
-background:#111;
-text-align:center;
-padding:15px;
-margin-top:20px;
+/* RATING */
+.rating{
+color:#f39c12;
+font-size:13px;
 }
 
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:18px;
+right:15px;
 background:#25D366;
-width:60px;
-height:60px;
+width:55px;
+height:55px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
-font-size:28px;
+font-size:26px;
 color:#fff;
-box-shadow:0 5px 15px rgba(0,0,0,.5);
-animation:pulse 1.5s infinite;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
+
+/* FORM */
+input,textarea{
+width:100%;
+padding:10px;
+margin:6px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:12px;
+margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NEWS -->
 <div class="news">
-🔥 10% Discount | 🚚 Free Service | 📞 9934676615
+<span>🔥 10% Discount on All Machines | 🚚 Free Home Service | 📞 Call Now: 9934676615</span>
 </div>
 
+<!-- HEADER -->
 <header>
-<div class="logo">⚖️ Electronic <span>कांटा</span></div>
-<p>Sale | Repair | Calibration</p>
+<h1>⚖️ इलेक्ट्रॉनिक कांटा</h1>
+<p>Sale | Repair | Calibration | Home Service</p>
 </header>
 
+<!-- NAV -->
 <nav>
 <a href="#">Home</a>
 <a href="#products">Products</a>
 <a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
 <a href="#order">Order</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<h1>Best Electronic कांटा Service</h1>
+<h2>Best Electronic कांटा Service</h2>
 <p>Trusted by 1000+ Customers</p>
-<a class="btn" href="https://wa.me/919934676615">Order Now</a>
+<a class="btn" href="https://wa.me/919934676615">Order on WhatsApp</a>
 </section>
 
 <!-- PRODUCTS -->
@@ -207,19 +200,37 @@ animation:pulse 1.5s infinite;
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
 <h3>Shop Scale</h3>
-<p class="rating">⭐⭐⭐⭐⭐</p>
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
 <h3>Platform Scale</h3>
-<p class="rating">⭐⭐⭐⭐⭐</p>
+<p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1581093588401-22b2a3d69a57">
 <h3>Jewellery Scale</h3>
-<p class="rating">⭐⭐⭐⭐⭐</p>
+<p class="rating">⭐⭐⭐⭐⭐ (5.0)</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091012184-5c7a7c5c65f7">
+<h3>Industrial Scale</h3>
+<p class="rating">⭐⭐⭐⭐⭐ (4.7)</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
+<h3>Table Top Scale</h3>
+<p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<h3>Heavy Duty कांटा</h3>
+<p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
 </div>
 
 </div>
@@ -227,14 +238,74 @@ animation:pulse 1.5s infinite;
 
 <!-- SERVICES -->
 <div class="container" id="services">
-<h2>Services</h2>
+<h2>Electronic कांटा Services</h2>
+
 <div class="grid">
 
-<div class="card"><h3>Repair</h3></div>
-<div class="card"><h3>Calibration</h3></div>
-<div class="card"><h3>Load Cell</h3></div>
-<div class="card"><h3>PCB Repair</h3></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
+<h3>Machine Repair</h3>
+<p>Shop, platform & industrial कांटा repair service.</p>
+</div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581093458791-9f3c3900f2c1">
+<h3>Calibration</h3>
+<p>Accurate weight calibration with standard weights.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091870627-3a1c5f1c5c91">
+<h3>Load Cell Repair</h3>
+<p>Load cell testing & replacement service.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581093588401-22b2a3d69a57">
+<h3>Weight Setting</h3>
+<p>Over/under weight issue fixing & setting.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b3d1d2c">
+<h3>PCB Repair</h3>
+<p>Full circuit board repair & IC fixing.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334394-9a8b2d7c9f7c">
+<h3>Display Repair</h3>
+<p>LED/LCD display problem solution.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+<h3>Battery Replacement</h3>
+<p>Battery backup issue & new battery install.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
+<h3>Home Service</h3>
+<p>Doorstep service available for all machines.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b3d1d2c">
+<h3>AMC Maintenance</h3>
+<p>Annual maintenance for shops & industries.</p>
+</div>
+
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="container" id="gallery">
+<h2>Gallery</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db"></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1581093588401-22b2a3d69a57"></div>
 </div>
 </div>
 
@@ -242,30 +313,27 @@ animation:pulse 1.5s infinite;
 <div class="container" id="order">
 <h2>Book Service</h2>
 <div class="card">
-
-<input type="text" id="name" placeholder="Name">
-<input type="text" id="phone" placeholder="Phone">
-<textarea id="msg" placeholder="Problem"></textarea>
-
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<textarea id="msg" placeholder="Your Problem"></textarea>
 <button class="btn" onclick="send()">Send on WhatsApp</button>
-
 </div>
 </div>
 
 <!-- CONTACT -->
 <div class="container" id="contact">
-<div class="contact-box">
-
-<p><b>Owner:</b> Manish Kumar 🏆 Topper</p>
+<h2>Contact</h2>
+<div class="card">
+<p><b>Owner:</b> Manish Kumar</p>
 <p><b>Phone:</b> 9934676615</p>
-
 </div>
 </div>
 
 <footer>
-© 2026 Electronic कांटा Service
+<p>© 2026 Electronic कांटा Service</p>
 </footer>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/919934676615">
 <i class="fab fa-whatsapp"></i>
 </a>
@@ -276,16 +344,10 @@ let n=document.getElementById("name").value;
 let p=document.getElementById("phone").value;
 let m=document.getElementById("msg").value;
 
-let text=`Hello Sir,
-Name: ${n}
-Phone: ${p}
-Problem: ${m}`;
-
-let url="https://wa.me/919934676615?text="+encodeURIComponent(text);
-
+let url="https://wa.me/919934676615?text=Name:"+n+"%0aPhone:"+p+"%0aProblem:"+m;
 window.open(url,'_blank');
 }
 </script>
 
 </body>
-</html>
+  </html>
